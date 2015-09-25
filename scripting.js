@@ -5,9 +5,14 @@ function doFirst(){ /*gets called as soon as website loads*/
     playIcon=document.getElementById('playgly');
     bar=document.getElementById('defaultBar');
     progressBar=document.getElementById('progressBar');
-
+    muteIcon=document.getElementById('vol');
+    mutebtn = document.getElementById("mutebtn");
+	volumeslider = document.getElementById("volumeslider");
+    
     playButton.addEventListener('click', playOrPause, false); /*call when play button is pressed*/
     defaultBar.addEventListener('click', clickedBar, false); /*call when progress bar is clicked*/
+    mutebtn.addEventListener("click",vidmute,false);
+	volumeslider.addEventListener("change",setvolume,false);
 }
 
 function playOrPause(){
@@ -44,4 +49,19 @@ function clickedBar(e){ /*called when progress bar is clicked*/
             progressBar.style.width=mouseX+'px'; /*change width of progress bar*/
     }
 }
+
+function vidmute(){
+	if(myMovie.muted){
+		myMovie.muted = false;
+		muteIcon.className = "glyphicon glyphicon-volume-off";
+	} else {
+		myMovie.muted = true;
+		muteIcon.className = "glyphicon glyphicon-volume-down";
+	}
+}
+
+function setvolume(){
+	myMovie.volume = volumeslider.value / 100;
+}
+
 window.addEventListener('load', doFirst, false); /*call "doFirst" as soon as website loads*/

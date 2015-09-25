@@ -8,6 +8,10 @@ header, section, footer, aside, nav, article, hgroup{
     display: block;
 }
 
+#playgly{
+    margin-top: -2px;
+}
+
 #skin{
     width: 750px;
     margin: 10px auto;
@@ -62,4 +66,26 @@ nav{
 button{
     width: 57px;
     height: 25px;
+}
+
+#mutebtn{
+    margin-left: 2px;
+}
+
+#vol{
+    font-size: 22px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+#volume{
+    margin-right: -500px;
+    color: white;
+    font-size: 22px;
+    max-width: 27px;
+}
+
+#volumeslider{
+    float: right;
+    max-width: 200px;
 }
